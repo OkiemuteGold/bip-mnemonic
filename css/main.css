@@ -59,6 +59,7 @@ textarea:active {
 a {
   color: #337ab7;
   text-decoration: none;
+  word-wrap: break-word;
 }
 
 a:hover {
@@ -66,9 +67,14 @@ a:hover {
   text-decoration: underline;
 }
 
+button:hover {
+  background: #ddd !important;
+}
 
 .main_header h1 {
   font-size: 36px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .main_header p {
@@ -109,19 +115,29 @@ code {
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
   box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
-  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-  transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -webkit-transition: border-color ease-in-out 0.15s,
+    box-shadow ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -webkit-transition: border-color ease-in-out 0.15s,
+    -webkit-box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s,
+    -webkit-box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 
-.generate-group .generate-btn {
+.form-control.border-0 {
+  padding-left: 0;
+  padding-top: 7px;
+}
+
+.generate-btn {
   display: inline-block;
   background: #efefef;
   border: 1px solid transparent;
   border-radius: 4px;
   font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
@@ -131,7 +147,20 @@ code {
   cursor: pointer;
 }
 
-.generate-group .select, #select-coin {
+.generate-btn.submit {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  min-width: 85px;
+  background: #337ab7;
+  color: #fff;
+}
+
+.generate-btn.submit:hover {
+  background: #23527c !important;
+}
+
+.generate-group .select,
+#select-coin {
   display: inline-block;
   width: auto !important;
   vertical-align: middle;
@@ -146,7 +175,9 @@ code {
   cursor: pointer;
 }
 
-#select-coin, #client, #script-semantics {
+#select-coin,
+#client,
+#script-semantics {
   width: 100% !important;
   display: block;
   margin: 0;
@@ -161,7 +192,8 @@ code {
   margin-bottom: 0;
 }
 
-.radio, .checkbox {
+.radio,
+.checkbox {
   position: relative;
   display: block;
 }
@@ -171,7 +203,8 @@ code {
   align-items: center;
 }
 
-.radio label, .checkbox label {
+.radio label,
+.checkbox label {
   min-height: 20px;
   font-weight: 400;
   cursor: pointer;
@@ -201,6 +234,10 @@ code {
 .text-area {
   height: auto;
   word-break: keep-all;
+}
+
+.nav-tabs {
+  margin-top: 5px;
 }
 
 .nav-tabs .nav-link {
@@ -271,11 +308,35 @@ textarea:active {
   margin-right: 5px;
 }
 
-.rows-input, .more-rows-from-index {
+.rows-input,
+.more-rows-from-index {
   margin-left: 5px;
   margin-right: 5px;
 }
 
-button:hover {
-  background: #ddd !important;
+@media screen and (max-width: 426px) {
+  .control-label {
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .add-more-rows,
+  .rows-input,
+  .more-rows-from-index {
+    margin-bottom: 5px;
+  }
+}
+
+@media screen and (max-width: 321px) {
+  #derived-addresses .checkbox {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+
+  .add-more-rows,
+  .rows-input,
+  .more-rows-from-index {
+    margin: 5px 0;
+  }
 }
